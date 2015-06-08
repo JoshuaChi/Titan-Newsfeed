@@ -1,0 +1,78 @@
+1. simple one
+curl -XPOST http://localhost:8080/demo/rest/newsfeed/filter/community1 -H 'Content-type:application/json' -d '
+{ 
+"start": {"model": "user", "id": 1}, 
+"paths": [
+  {
+    "edge": {
+	  "direction": 1,
+	  "label": "be_friend"
+	},
+	"properties": []
+  },
+  {
+    "edge": {
+	  "direction": 1,
+	  "label": "be_friend"
+	},
+	"properties": []
+  }
+], 
+"order": true,
+"offset": 0, 
+"limit": 12 
+}'
+
+2. tags[2,64]
+curl -XPOST http://localhost:8080/demo/rest/newsfeed/filter/community1 -H 'Content-type:application/json' -d '
+{ 
+"start": {"model": "user", "id": 1}, 
+"paths": [
+  {
+    "edge": {
+	  "direction": 1,
+	  "label": "be_friend"
+	},
+	"properties": []
+  },
+  {
+    "edge": {
+	  "direction": 1,
+	  "label": "user_activity"
+	},
+	"properties": [ {"type": 4, "value": {"key":"tags", "value":66}} ]
+  }
+], 
+"order": true,
+"offset": 0, 
+"limit": 12 
+}'
+
+3. GEO
+curl -XPOST http://localhost:8080/demo/rest/newsfeed/filter/community1 -H 'Content-type:application/json' -d '
+{ 
+"start": {"model": "user", "id": 1},
+"paths": [
+  {
+    "edge": {
+	  "direction": 1,
+	  "label": "be_friend"
+	},
+	"properties": [{"type": 64, "value": {"key":"geo", "value":[48.3972222, 10.4388889, 50.00]}}]
+  }
+], 
+"offset": 0, 
+"limit": 12,
+"order": false
+}'
+
+4. Global GEO filter
+curl -XPOST http://localhost:8080/demo/rest/newsfeed/filter/community1 -H 'Content-type:application/json' -d '
+{
+"paths": [{
+  "properties": [{"type": 64, "value": {"key":"geo", "value":[52.53302, 13.60929, 1.00]}}]
+}], 
+"order": true,
+"offset": 0, 
+"limit": 12 
+}'

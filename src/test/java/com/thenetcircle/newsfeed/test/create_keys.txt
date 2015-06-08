@@ -1,0 +1,13 @@
+##For example, �birthday� is a single-valued property key since a person has exactly one birthday.##
+curl -XPUT http://atkins:8282/tncnewsfeed/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '
+[{
+	"key": "iid",
+	"type": "string",
+	"index": ["vertex", "edge", "single"]
+},
+{
+	"key": "time",
+	"type": "string",
+	"index": ["vertex", "edge"]
+}]
+'

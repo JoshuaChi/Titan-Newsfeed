@@ -1,0 +1,36 @@
+{
+    "community1": {
+      "prod": {  
+		"storage.backend": "hbase",
+		"storage.tablename": "user",
+		"storage.hostname": "10.20.1.166,10.20.1.167,10.20.0.195,10.20.0.196",
+		"storage.port": 2181,
+		"storage.connection-timeout": 10000, 
+		"storage.connection-pool-size": 32,
+		"storage.read-consistency-level": "QUORUM",
+		"storage.write-consistency-level": "QUORUM",
+		"storage.replication-factor": 3,
+		"storage.index.search.backend": "elasticsearch",
+		"storage.index.search.client-only": "true",
+		"storage.index.search.hostname": "10.20.1.166,10.20.1.167,10.20.0.195,10.20.0.196",
+		"storage.index.search.local-mode": "false",
+		"storage.index.search.cluster-name": "titanelasticsearch"  
+      },
+      "lab": {
+		"storage.backend": "hbase",
+		"storage.tablename": "user",
+		"storage.hostname": "10.60.1.164,10.60.1.165,10.60.1.166,10.60.1.167,10.60.1.146",
+		"storage.port": 2181,
+		"storage.connection-timeout": 10000, 
+		"storage.connection-pool-size": 32,
+		"storage.read-consistency-level": "QUORUM",
+		"storage.write-consistency-level": "QUORUM",
+		"storage.replication-factor": 3,
+		"storage.index.search.backend": "elasticsearch",
+		"storage.index.search.client-only": "true",
+		"storage.index.search.hostname": "10.60.1.164,10.60.1.165,10.60.1.166,10.60.1.167",
+		"storage.index.search.local-mode": "false",
+		"storage.index.search.cluster-name": "tncelasticsearch"  
+      }
+    }
+}

@@ -1,0 +1,113 @@
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/vertex/community1/user -H 'Content-type:application/json' -d '
+{ 
+	"id": {
+	  "type": "int",
+	  "value": 10090,
+	  "is_key_index": {
+          "type": "string",
+          "index": ["vertex", "edge", "single", "unique"]
+	  }
+	}, 
+	"name": {
+	  "type": "string",
+	  "value": "Robby"
+	},
+	"gender": {
+	  "type": "int",
+	  "value": 1
+	}, 
+	"membership": {
+	  "type": "int",
+	  "value": 2
+	}, 
+	"lastlogin": {
+	  "type": "string",
+	  "value": "2014-03-13 13:05:02"
+	}, 
+	"country": {
+	  "type": "string",
+	  "value": "DE"
+	},
+	"lat": {
+	  "type": "double",
+	  "value": 54.00694
+	},
+	"lon": {
+	  "type": "double",
+	  "value": 61.18889
+	},
+	"geo": {
+	  "type": "geo",
+	  "value": [54.00694, 61.18889]
+	}
+}'
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/vertex/community1/user -H 'Content-type:application/json' -d '
+{ 
+	"id": {
+	  "type": "int",
+	  "value": 10091,
+	  "is_key_index": {
+          "type": "string",
+          "index": ["vertex", "edge", "single", "unique"]
+	  }
+	}, 
+	"name": {
+	  "type": "string",
+	  "value": "Kevin"
+	},
+	"gender": {
+	  "type": "int",
+	  "value": 2
+	}, 
+	"membership": {
+	  "type": "int",
+	  "value": 3
+	}, 
+	"lastlogin": {
+	  "type": "string",
+	  "value": "2013-03-13 13:05:02"
+	}, 
+	"country": {
+	  "type": "string",
+	  "value": "DE"
+	},
+	"lat": {
+	  "type": "double",
+	  "value": 53.00694
+	},
+	"lon": {
+	  "type": "double",
+	  "value": 61.18889
+	},
+	"geo": {
+	  "type": "geo",
+	  "value": [53.00694, 61.18889]
+	}
+}'
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/vertex/community1/user -H 'Content-type:application/json' -d '
+{ 
+	"id": {
+	  "type": "int",
+	  "value": 10092,
+	  "is_key_index": {
+          "type": "string",
+          "index": ["vertex", "edge", "single", "unique"]
+	  }
+	}
+}'
+
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/edges/community1 -H 'Content-type:application/json' -d '
+[
+  {
+    "from": {"id": "10090", "model": "user"},
+    "to": {"id": "10091", "model": "user"},
+    "label": "be_friend"
+  },
+  {
+    "from": {"id": "10090", "model": "user"},
+    "to": {"id": "10092", "model": "user"},
+    "label": "be_friend"
+  }
+]'

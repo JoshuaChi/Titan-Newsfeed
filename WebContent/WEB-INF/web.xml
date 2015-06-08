@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>demo</display-name>
+	<servlet>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>resteasy.scan</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/rest</param-value>
+	</context-param>
+	<context-param>
+		<param-name>env</param-name>
+		<param-value>prod</param-value>
+	</context-param>
+	<context-param>
+		<param-name>service-conf</param-name>
+		<param-value>/WEB-INF/service.json</param-value>
+	</context-param>
+	<context-param>
+		<param-name>community-schema</param-name>
+		<param-value>/WEB-INF/schema.json</param-value>
+	</context-param>
+	<context-param>
+		<param-name>community-model-vertex-init-sql</param-name>
+		<param-value>/WEB-INF/vertex-init-sql.json</param-value>
+	</context-param>
+	<context-param>
+		<param-name>community-model-edge-init-sql</param-name>
+		<param-value>/WEB-INF/edge-init-sql.json</param-value>
+	</context-param>
+	<context-param>
+		<param-name>community-database-configure</param-name>
+		<param-value>/WEB-INF/database.json</param-value>
+	</context-param>
+	<context-param>
+		<param-name>community-hashcode</param-name>
+		<param-value>/WEB-INF/hashcode.json</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.thenetcircle.newsfeed.bootstrap.NewsfeedContextListener</listener-class>
+	</listener>
+
+</web-app>

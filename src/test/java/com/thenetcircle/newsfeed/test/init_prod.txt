@@ -1,0 +1,166 @@
+curl -XPUT http://rsid-a-51.austria.private/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '[
+{
+"key": "iid",
+"type": "string",
+"index": ["vertex", "edge", "single", "unique"]
+},
+{
+"key": "time",
+"type": "string",
+"index": ["vertex", "edge"]
+},
+{
+"key": "nickname",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "gender",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "membership",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "status",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "last_login",
+"type": "long",
+"index": ["vertex"]
+},
+{
+"key": "signup_date",
+"type": "long",
+"index": ["vertex"]
+},
+{
+"key": "country_iso",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "city",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "lat",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "lon",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "geo",
+"type": "geo",
+"index": ["vertex"]
+},
+{
+"key": "model",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "created_at",
+"type": "long",
+"index": ["vertex"]
+}]'
+
+
+curl -XPUT http://rsid-a-51.austria.private/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '[
+{
+"key": "uid",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "category",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "rate_count",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "rate",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "comment",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "is_private",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "uploadtime",
+"type": "long",
+"index": ["vertex"]
+}]'
+
+
+
+
+
+#PROD
+#punda1
+curl -XPOST 'http://punda1.austria.private:9999/rest/newsfeed/init/vertex/community1/user/0/1000000/200000/hashcodeexample-prod'
+#punda2
+curl -XPOST 'http://punda2.austria.private:9999/rest/newsfeed/init/vertex/community1/user/1000000/2000000/200000/hashcodeexample-prod'
+#rsid-a-50
+curl -XPOST 'http://rsid-a-50.austria.private:9999/rest/newsfeed/init/vertex/community1/user/2000000/3000000/200000/hashcodeexample-prod'
+#rsid-a-51
+curl -XPOST 'http://rsid-a-51.austria.private:9999/rest/newsfeed/init/vertex/community1/user/3000000/5428850/200000/hashcodeexample-prod'
+
+
+curl -XPOST 'http://punda1.austria.private:9999/rest/newsfeed/init/vertex/community1/image/0/2000000/200000/hashcodeexample-prod'
+curl -XPOST 'http://punda2.austria.private:9999/rest/newsfeed/init/vertex/community1/image/2000000/4000000/200000/hashcodeexample-prod'
+curl -XPOST 'http://rsid-a-50.austria.private:9999/rest/newsfeed/init/vertex/community1/image/4000000/6000000/200000/hashcodeexample-prod'
+curl -XPOST 'http://rsid-a-51.austria.private:9999/rest/newsfeed/init/vertex/community1/image/6000000/8860176/200000/hashcodeexample-prod'
+
+
+curl -XPOST 'http://rsid-a-51.austria.private/rest/newsfeed/clear/graph/community1/hashcodeexample-prod'
+
+
+
+#test create
+curl -XPUT http://punda1.austria.private:9999/rest/newsfeed/create/vertex/community1/user -H 'Content-type:application/json' -d "
+{
+'id': {'type': 'int','value': 9999999}, 
+'nickname': {'type': 'string','value': 'nickname-9999999'},
+'gender': {'type': 'int','value': 1}, 
+'membership': {'type': 'int','value': 1}, 
+'last_login': {'type': 'string','value': '2014-03-13 13:05:02'}, 
+'country_iso': {'type': 'string','value': 'DE'},
+'lat': {'type': 'double','value': 54.00694},
+'lon': {'type': 'double','value': 61.18889},
+'geo': {'type': 'geo','value': [54.00694, 61.18889]}}"
+
+curl -XPUT http://punda1.austria.private:9999/rest/newsfeed/create/edges/community1 -H 'Content-type:application/json' -d '
+[{"from": {"id": 90, "model": "user"}, 
+"to": {"id": "40", "model": "image"},
+"label": "upload_image"}]'
+
+curl -XGET http://punda1.austria.private:9999/rest/newsfeed/has/property/key/community1/iid
+
+curl -XGET  http://punda1.austria.private:9999/rest/newsfeed/get/vertex/community1/user/9999999
+curl -XGET  http://punda1.austria.private:9999/rest/newsfeed/get/edges/community1/user/9999999
+curl -XPOST http://punda1.austria.private:9999/rest/newsfeed/filter/community1 -H 'Content-type:application/json' -d '{
+"start": {"model": "user", "id": "9999999"}, 
+"paths": [{"edge": {"direction": 2,"label": "upload_image"},"properties": []}], 
+"order": true,"offset": 0, "limit": 12 }'

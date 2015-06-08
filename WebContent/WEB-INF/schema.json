@@ -1,0 +1,92 @@
+{
+    "community1": [
+      {"user": 
+      	[
+	      	{
+	      	  "name": "id",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "nickname", 
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "gender",
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "membership",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "status",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "last_login",
+	      	  "type": "long"
+	      	}, 
+	      	{
+	      	  "name": "signup_date",
+	      	  "type": "long"
+	      	}, 
+	      	{
+	      	  "name": "country_iso",
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "city",
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "lat",
+	      	  "type": "double"
+	      	}, 
+	      	{
+	      	  "name": "lon",
+	      	  "type": "double"
+	      	}, 
+	      	{
+	      	  "name": "geo",
+	      	  "type": "geo"
+	      	}
+      	]
+      },
+      {"image": 
+      	[
+      		{
+	      	  "name": "id",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "uid",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "category",
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "rate_count",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "rate",
+	      	  "type": "double"
+	      	}, 
+	      	{
+	      	  "name": "comment",
+	      	  "type": "string"
+	      	}, 
+	      	{
+	      	  "name": "is_private",
+	      	  "type": "int"
+	      	}, 
+	      	{
+	      	  "name": "uploadtime",
+	      	  "type": "long"
+	      	}
+      	]
+      }
+    ]
+}

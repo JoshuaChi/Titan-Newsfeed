@@ -1,0 +1,6 @@
+{
+    "community1": {
+    	"lab": "hashcodeexample-dev",
+    	"prod": hashcodeexample-prod
+	}
+}

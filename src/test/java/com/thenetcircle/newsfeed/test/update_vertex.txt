@@ -1,0 +1,17 @@
+1.
+curl -XPOST http://localhost:8080/demo/rest/newsfeed/update/vertex/community1/user/50 -H 'Content-type:application/json' -d '
+[ 
+	{
+	  "key": "nickname",
+	  "type": "string",
+	  "value": "xiaomei008",
+	  "action": 1
+	},
+	{
+	  "key": "geo",
+	  "lat": 54.10694,
+	  "lon": 61.28889,
+	  "type": "geo",
+	  "action": -1
+	}
+]'

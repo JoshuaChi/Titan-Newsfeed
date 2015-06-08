@@ -1,0 +1,16 @@
+{
+    "community1": {
+    	"lab": {
+	    	"username": "community1_admin",
+	      	"password": "NetNet2",
+	      	"host": "moleman-community1",
+	      	"database": "community1"
+    	},
+    	"prod": {
+	    	"username": "repliselect",
+	      	"password": "r3pl1s3l3ct",
+	      	"host": "10.20.0.175",
+	      	"database": "community1"
+    	}
+	}
+}

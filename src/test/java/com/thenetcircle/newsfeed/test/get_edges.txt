@@ -1,0 +1,1 @@
+curl -XGET  http://localhost:8080/demo/rest/newsfeed/get/edges/community1/user/1

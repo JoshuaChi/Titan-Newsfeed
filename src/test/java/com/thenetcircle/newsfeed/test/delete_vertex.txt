@@ -1,0 +1,1 @@
+curl -XDELETE  http://localhost:8080/demo/rest/newsfeed/delete/vertex/community1/user/10090

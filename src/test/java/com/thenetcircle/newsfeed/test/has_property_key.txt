@@ -1,0 +1,2 @@
+1.
+curl -XGET http://localhost:8080/demo/rest/newsfeed/has/property/key/community1/user_id

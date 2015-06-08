@@ -1,0 +1,114 @@
+curl -XPUT http://atkins.thenetcircle.lab:8282/tncnewsfeed/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '[
+{
+"key": "iid",
+"type": "string",
+"index": ["vertex", "edge", "single", "unique"]
+},
+{
+"key": "time",
+"type": "string",
+"index": ["vertex", "edge"]
+},
+{
+"key": "nickname",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "gender",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "membership",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "status",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "last_login",
+"type": "long",
+"index": ["vertex"]
+},
+{
+"key": "signup_date",
+"type": "long",
+"index": ["vertex"]
+},
+{
+"key": "country_iso",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "city",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "lat",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "lon",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "geo",
+"type": "geo",
+"index": ["vertex"]
+},
+{
+"key": "model",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "created_at",
+"type": "long",
+"index": ["vertex"]
+}]'
+
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '[
+{
+"key": "uid",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "category",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "rate_count",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "rate",
+"type": "double",
+"index": ["vertex"]
+},
+{
+"key": "comment",
+"type": "string",
+"index": ["vertex"]
+},
+{
+"key": "is_private",
+"type": "int",
+"index": ["vertex"]
+},
+{
+"key": "uploadtime",
+"type": "long",
+"index": ["vertex"]
+}]'

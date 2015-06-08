@@ -1,0 +1,17 @@
+{
+    "community1": [{
+      "upload_image": {
+        "from": {
+          "model": "image",
+          "sql": "select id, uid, category, rate_count, rate,comment, is_private, uploadtime from images"
+        },
+        "to": {
+          "model": "user",
+          "sql": "select u.`id` as id, u.`nickname` as nickname, u.`gender` as gender, u.`membership` as membership, u.`status` as status, u.`last_login` as last_login, u.`signup_date` as signup_date, ug.`country_iso` as country_iso, ug.`city`, ug.`lat` as lat, ug.`lon` as lon from users_account u left join users_geo ug on u.id = ug.id"
+ 		},
+        "from-id": "id",
+        "to-id": "uid",
+        "direction": 2
+      }
+    }]
+}

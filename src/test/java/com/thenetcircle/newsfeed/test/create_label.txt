@@ -1,0 +1,26 @@
+1.
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/keys/community1 -H 'Content-type:application/json' -d '
+[{
+	"key": "time",
+	"type": "string",
+	"index": ["vertex", "edge"]
+}]
+'
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/label/community1 -H 'Content-type:application/json' -d '
+{
+	"name": "be_friend"
+}
+'
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/labels/community1 -H 'Content-type:application/json' -d '
+[{
+	"name": "post_blog"
+}]
+'
+
+curl -XPUT http://localhost:8080/demo/rest/newsfeed/create/labels/community1 -H 'Content-type:application/json' -d '
+[{
+	"name": "upload_image"
+}]
+'

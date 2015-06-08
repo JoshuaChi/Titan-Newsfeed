@@ -1,0 +1,13 @@
+curl -XDELETE http://localhost:8080/demo/rest/newsfeed/delete/edges/community1 -H 'Content-type:application/json' -d '
+[
+  {
+    "vertex": {"id": "10090", "model": "user"},
+    "direction": 1,
+    "label": "be_friend"
+  },
+  {
+    "from": {"id": "10091", "model": "user"},
+    "direction": 1,
+    "label": "be_friend"
+  }
+]'

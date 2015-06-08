@@ -1,0 +1,5 @@
+#LAB
+curl -XPOST 'http://atkins.thenetcircle.lab:8282/tncnewsfeed/rest/newsfeed/init/vertex/community1/user/0/5000616/100000/hashcodeexample-dev'
+curl -XPOST 'http://localhost:8080/demo/rest/newsfeed/init/vertex/community1/image/0/77085/100000/hashcodeexample-dev'
+
+
